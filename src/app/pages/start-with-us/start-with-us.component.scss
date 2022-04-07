@@ -1,0 +1,87 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 84px;
+  padding-bottom: 105px;
+  scroll-snap-align: start;
+  flex-direction: column;
+}
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  font-size: 159px;
+  line-height: 172.52px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.slider p {
+  font-size: 159px;
+  line-height: 172.52px;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+}
+.contact--button {
+  height: 190px;
+  width: 190px;
+  border-radius: 50%;
+  border: 0;
+  background-color: rgba(255, 215, 38, 0.8);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-transform: uppercase;
+  transform: translateY(-35%);
+  margin-bottom: 40px;
+}
+hr {
+  height: 1px;
+  background-color: #fafafa;
+  margin: 59px 49px;
+}
+.divider {
+  width: 100vw;
+}
+
+.mini--menu--1 {
+  width: 472px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.mini--menu--1 a {
+  text-decoration: none;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #fafafa;
+}
+.instagram--link {
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 119%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}

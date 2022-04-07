@@ -1,0 +1,33 @@
+$yellow-button: #e0c032;
+
+nav {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+nav div {
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+}
+nav a {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+}
+.contact--button {
+  border: 0;
+  background-color: $yellow-button;
+  font-size: 16px;
+  line-height: 0;
+  padding: 18px 21px;
+  border-radius: 20px;
+}

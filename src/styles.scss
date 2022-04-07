@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+$yellow-button: #e0c032;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Work+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  color: white;
+  font-family: "Work Sans";
+  font-style: normal;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}

@@ -1,0 +1,51 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 84px;
+  padding-bottom: 121px;
+  scroll-snap-align: start;
+}
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 50px;
+  height: 100%;
+  display: flex;
+  gap: 17.22vw;
+  align-items: center;
+}
+.two--columns--columns {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.two--columns--columns img {
+  width: 50%;
+  object-fit: cover;
+}
+.italic {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 93px;
+  color: white;
+  font-size: 40px;
+  line-height: 48px;
+  font-style: italic;
+}
+.description {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29.9px;
+  color: white;
+}
+.description:first-of-type {
+  margin-bottom: 94px;
+}
