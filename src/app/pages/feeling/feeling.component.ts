@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-feeling',
   templateUrl: './feeling.component.html',
-  styleUrls: ['./feeling.component.scss']
+  styleUrls: ['./feeling.component.scss'],
 })
 export class FeelingComponent implements OnInit {
-
-  constructor() { }
+  @Output() goDownEvent = new EventEmitter<boolean>();
+  constructor() {}
 
   ngOnInit(): void {
+    console.log('emit');
   }
-
 }

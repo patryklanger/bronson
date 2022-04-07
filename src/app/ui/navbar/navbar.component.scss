@@ -22,6 +22,7 @@ nav a {
   font-size: 16px;
   line-height: 16px;
   color: white;
+  cursor: pointer;
 }
 .contact--button {
   border: 0;
@@ -30,4 +31,10 @@ nav a {
   line-height: 0;
   padding: 18px 21px;
   border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: transfrom 0.4s ease-in-out;
+}
+.contact--button:hover {
+  transform: scale(1.05);
 }

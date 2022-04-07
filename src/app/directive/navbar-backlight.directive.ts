@@ -10,8 +10,6 @@ export class NavbarBacklightDirective {
   }
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll() {
-    console.log(window.scrollY);
-    console.log(window.innerHeight);
     if (window.scrollY >= window.innerHeight)
       this.el.nativeElement.style.backgroundColor = 'rgba(0,0,0,0.8)';
     else if (window.scrollY > 30)

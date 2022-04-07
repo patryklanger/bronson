@@ -2,5 +2,8 @@
   <div class="logo--container">
     <img src="/assets/main/logo.png" alt="" />
   </div>
-  <app-scroll-down bottomAspectRatio="3.44"></app-scroll-down>
+  <app-scroll-down
+    bottomAspectRatio="3.44"
+    (click)="this.goDownEvent.emit(true)"
+  ></app-scroll-down>
 </div>

@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="content">
+    <img src="/assets/main/logo.png" alt="" class="logo" />
+    <p class="descript">
+      Połączmy siły i wbij się z nami na zupełnie inny poziom.
+    </p>
+    <div class="divider">
+      <hr style="margin-bottom: 71px" />
+    </div>
+    <div class="info--contact">
+      <div class="info--contact--element">
+        <p>email</p>
+        <p>hello@bdc.com</p>
+      </div>
+      <div class="info--contact--element">
+        <p>whatsapp</p>
+        <p>hello@bdc.com</p>
+      </div>
+      <div class="info--contact--element">
+        <p>facetime</p>
+        <p>hello@bdc.com</p>
+      </div>
+    </div>
+    <div class="divider">
+      <hr style="margin-bottom: 29px; margin-top: 85px" />
+    </div>
+    <form action="" [formGroup]="formGroup">
+      <div class="form--row">
+        <input
+          type="text"
+          formControlName="nameAndSurname"
+          placeholder="imię i nazwisko"
+          [class.error]="
+            nameAndSurname?.invalid &&
+            (nameAndSurname?.dirty || nameAndSurname?.touched)
+          "
+        />
+        <input
+          type="text"
+          placeholder="nazwa firmy"
+          formControlName="companyName"
+        />
+      </div>
+      <div class="form--row">
+        <input
+          type="text"
+          placeholder="email"
+          formControlName="email"
+          [class.error]="email?.invalid && (email?.dirty || email?.touched)"
+        />
+        <input
+          type="text"
+          placeholder="nr telefonu"
+          formControlName="phoneNo"
+          [class.error]="
+            phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)
+          "
+        />
+      </div>
+      <div class="textarea--element">
+        <textarea
+          #messageTextarea
+          name=""
+          id="message"
+          placeholder="TREŚĆ"
+          formControlName="message"
+          (input)="recountTextareaAmount($event)"
+          [class.error]="
+            message?.invalid && (message?.dirty || message?.touched)
+          "
+        ></textarea>
+        <p class="textarea--counter">{{ textareaLength }}/1500</p>
+      </div>
+      <button class="yellow--button">Wyślij wiadomość</button>
+    </form>
+    <p class="dim"><strong>Dimensione BRONSON</strong></p>
+    <p class="dim">ul. Taka i Taka 00, 00-102 Wrocław</p>
+    <img
+      src="/assets/form.png"
+      alt=""
+      style="
+        width: 100vw;
+        max-width: 1440px;
+        object-fit: contain;
+        margin-top: 128px;
+        margin-bottom: 23px;
+      "
+    />
+    <app-art-menu></app-art-menu>
+  </div>
+</div>

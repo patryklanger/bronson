@@ -19,7 +19,13 @@
         <button class="outline-white-button">
           Sprwadź niepowtarzalną ofertę
         </button>
-        <img src="/assets/ui/arrow-down.png" class="scroll-down" alt="" />
+        <img
+          src="/assets/ui/arrow-down.png"
+          style="cursor: pointer"
+          class="scroll-down"
+          alt=""
+          (click)="this.goDownEvent.emit(true)"
+        />
       </div>
       <div class="two--columns--columns">
         <img src="/assets/we-ensure/art.png" alt="" />

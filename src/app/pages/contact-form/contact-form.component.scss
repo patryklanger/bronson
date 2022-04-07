@@ -1,0 +1,174 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 84px;
+  padding-bottom: 105px;
+  scroll-snap-align: start;
+  flex-direction: column;
+}
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.content .logo {
+  width: 517px;
+  object-fit: contain;
+}
+.descript {
+  font-size: 25px;
+  line-height: 29.33px;
+  text-align: center;
+  width: 552px;
+  margin-top: 71px;
+}
+hr {
+  height: 1px;
+  background-color: #fafafa;
+  margin: 59px 49px;
+}
+.divider {
+  width: 100vw;
+}
+.info--contact {
+  max-width: 1177px;
+  display: flex;
+  justify-content: space-between;
+  width: 81.73vw;
+  gap: 50px;
+}
+.info--contact--element p {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18.77px;
+  letter-spacing: 0.03em;
+  width: unset;
+}
+.info--contact--element p:last-of-type {
+  font-weight: bold;
+  margin-top: 34px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 254px;
+  margin-bottom: 129px;
+}
+.form--row {
+  display: flex;
+  gap: 28px;
+}
+.form--row input,
+textarea {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  margin-bottom: 134px;
+  border-bottom: 1px solid #fafafa60;
+  padding-bottom: 18px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18.4px;
+  color: #fafafa;
+  outline: none;
+  transition: border-bottom 0.1s ease-in-out;
+  resize: none;
+}
+
+.form--row input:hover,
+.form--row input:active,
+.form--row input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus {
+  border-bottom: 1px solid #fafafa;
+}
+.form--row input:hover::placeholder,
+textarea:hover::placeholder {
+  opacity: 1;
+}
+.form--row input:active::placeholder,
+.form--row input:focus::placeholder,
+textarea:active::placeholder,
+textarea:focus::placeholder {
+  opacity: 0;
+}
+
+.form--row input::placeholder,
+textarea::placeholder {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18.4px;
+  color: #fafafa;
+  opacity: 0.6;
+  transition: opacity 0.1s ease-in-out;
+}
+.yellow--button {
+  font-size: 16px;
+  line-height: 0%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fafafa;
+  padding: 34px 58px;
+  border: 0;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #e0c032;
+}
+textarea {
+  padding-bottom: 0;
+  margin-bottom: 35px;
+  padding-right: 75px;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+textarea {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  height: fit-content;
+}
+.textarea--element {
+  position: relative;
+}
+.textarea--element .textarea--counter {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  width: fit-content;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #fafafa;
+  opacity: 0.6;
+}
+.error {
+  border-bottom: 1px solid red !important;
+}
+.dim {
+  margin-top: 22px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+.dim:first-of-type {
+}

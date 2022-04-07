@@ -26,5 +26,8 @@
     </div>
   </div>
   <app-semi-footer></app-semi-footer>
-  <app-scroll-down bottomAspectRatio="13.44"></app-scroll-down>
+  <app-scroll-down
+    bottomAspectRatio="13.44"
+    (click)="this.goDownEvent.emit(true)"
+  ></app-scroll-down>
 </div>
