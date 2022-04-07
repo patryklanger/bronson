@@ -83,6 +83,9 @@ ul li {
   cursor: pointer;
   text-transform: uppercase;
 }
+.outline-white-button:hover {
+  transform: scale(1.2);
+}
 .yellow--button {
   padding: 34px 54px;
   font-size: 16px;
@@ -93,6 +96,10 @@ ul li {
   margin-top: 99px;
   outline: none;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.yellow--button:hover {
+  transform: scale(1.1);
 }
 @media only screen and (max-width: 1100px) {
   .line {

@@ -9,7 +9,5 @@ export class FeelingComponent implements OnInit {
   @Output() goDownEvent = new EventEmitter<boolean>();
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('emit');
-  }
+  ngOnInit(): void {}
 }

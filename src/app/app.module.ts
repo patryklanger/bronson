@@ -22,6 +22,12 @@ import { WeEnsureDirective } from './directive/one-page/we-ensure.directive';
 import { AppNeedsDirective } from './directive/one-page/app-needs.directive';
 import { StartWithUsDirective } from './directive/one-page/start-with-us.directive';
 import { VideoPageComponent } from './pages/video-page/video-page.component';
+import { VideoDirective } from './directive/one-page/video.directive';
+import { SliderDirective } from './directive/slider.directive';
+import { ButtonAnimationDirective } from './directive/button-animation.directive';
+import { FooterComponent } from './ui/footer/footer.component';
+import { SwipeLeftDirective } from './directive/swipe-left.directive';
+import { SwipeRightDirective } from './directive/swipe-right.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +50,12 @@ import { VideoPageComponent } from './pages/video-page/video-page.component';
     AppNeedsDirective,
     StartWithUsDirective,
     VideoPageComponent,
+    VideoDirective,
+    SliderDirective,
+    ButtonAnimationDirective,
+    FooterComponent,
+    SwipeLeftDirective,
+    SwipeRightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

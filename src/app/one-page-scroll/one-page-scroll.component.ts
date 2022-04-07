@@ -5,7 +5,7 @@ import { AppNeedsDirective } from '../directive/one-page/app-needs.directive';
 import { WeEnsureDirective } from '../directive/one-page/we-ensure.directive';
 import { StartWithUsDirective } from '../directive/one-page/start-with-us.directive';
 import { Router } from '@angular/router';
-import { StartWithUsComponent } from '../pages/start-with-us/start-with-us.component';
+import { VideoDirective } from '../directive/one-page/video.directive';
 
 @Component({
   selector: 'app-one-page-scroll',
@@ -14,6 +14,9 @@ import { StartWithUsComponent } from '../pages/start-with-us/start-with-us.compo
 })
 export class OnePageScrollComponent implements OnInit {
   @ViewChild(MainPageDirective, { read: ElementRef }) mainPageComponent:
+    | ElementRef
+    | undefined;
+  @ViewChild(VideoDirective, { read: ElementRef }) videoComponent:
     | ElementRef
     | undefined;
   @ViewChild(FeelingDirective, { read: ElementRef }) feelingComponent:
@@ -37,6 +40,11 @@ export class OnePageScrollComponent implements OnInit {
     switch (url) {
       case '/main':
         this.mainPageComponent?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+      case '/our-clip':
+        this.videoComponent?.nativeElement.scrollIntoView({
           behavior: 'smooth',
         });
         break;
@@ -71,6 +79,11 @@ export class OnePageScrollComponent implements OnInit {
         break;
       case 'feeling':
         this.feelingComponent?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+      case 'our-clip':
+        this.videoComponent?.nativeElement.scrollIntoView({
           behavior: 'smooth',
         });
         break;

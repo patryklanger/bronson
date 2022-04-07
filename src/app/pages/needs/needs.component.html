@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <div class="two--columns--columns relative--container">
-        <ul>
+        <ul appSwipeLeft>
           <li>ARCHITEKTURA</li>
           <li>WNĘTRZE</li>
           <li>PROJEKTOWANIE</li>
@@ -19,7 +19,7 @@
           (click)="this.goDownEvent.emit(true)"
         />
       </div>
-      <div class="two--columns--columns">
+      <div class="two--columns--columns" appSwipeRight>
         <div class="line">
           <p><strong> Architektura wnętrz</strong></p>
           <p style="font-weight: 400; font-style: italic">Kreacja</p>

@@ -1,0 +1,66 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 84px;
+  padding-bottom: 105px;
+  scroll-snap-align: start;
+  flex-direction: column;
+}
+.content {
+  max-width: 1440px;
+  width: 100%;
+  // padding: 0 50px;
+  height: 100%;
+  display: flex;
+  gap: 10.13vw;
+  align-items: center;
+}
+.video-player {
+  width: 100vw;
+  max-width: 1440px;
+  height: fit-content;
+  position: relative;
+}
+
+video {
+  width: 100%;
+}
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.play-pasue-button {
+  text-transform: uppercase;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #0457d270;
+  border: none;
+  outline: none;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.1s ease-out;
+}
+.controls.active {
+  background-color: rgba(0, 0, 0, 0);
+}
+.controls.active .play-pasue-button {
+  opacity: 0;
+}
+.controls.active:hover .play-pasue-button {
+  opacity: 1;
+}
