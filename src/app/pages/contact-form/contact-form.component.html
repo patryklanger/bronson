@@ -71,7 +71,12 @@
         ></textarea>
         <p class="textarea--counter">{{ textareaLength }}/1500</p>
       </div>
-      <button class="yellow--button">Wyślij wiadomość</button>
+      <button
+        class="yellow--button"
+        (click)="router.navigateByUrl('/thank-you')"
+      >
+        Wyślij wiadomość
+      </button>
     </form>
     <p class="dim"><strong>Dimensione BRONSON</strong></p>
     <p class="dim">ul. Taka i Taka 00, 00-102 Wrocław</p>

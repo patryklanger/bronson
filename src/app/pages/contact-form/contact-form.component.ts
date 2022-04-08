@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { getTestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
@@ -20,7 +21,7 @@ export class ContactFormComponent implements OnInit {
   scrollHeight: number | undefined;
   formGroup: FormGroup;
   textareaLength = '0';
-  constructor() {
+  constructor(public router: Router) {
     window.scroll(0, 0);
     this.formGroup = new FormGroup({
       nameAndSurname: new FormControl('', [Validators.required]),
