@@ -28,6 +28,7 @@ import { ButtonAnimationDirective } from './directive/button-animation.directive
 import { FooterComponent } from './ui/footer/footer.component';
 import { SwipeLeftDirective } from './directive/swipe-left.directive';
 import { SwipeRightDirective } from './directive/swipe-right.directive';
+import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { SwipeRightDirective } from './directive/swipe-right.directive';
     FooterComponent,
     SwipeLeftDirective,
     SwipeRightDirective,
+    ThankYouComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

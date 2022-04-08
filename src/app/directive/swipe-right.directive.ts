@@ -11,14 +11,20 @@ export class SwipeRightDirective {
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     if (this.isInViewport()) {
-      var arr = this.el.nativeElement.children;
+      setTimeout(() => {
+        var arr = this.el.nativeElement.children;
 
-      for (var i = 0; i < arr.length; i++) {
-        arr[i].style.transform = `translateX(0)`;
-        arr[i].style.transition = ``;
-        arr[i].style.transitionDelay = ``;
-      }
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].style.transform = `translateX(0)`;
+          setTimeout(this.deleteProperies.bind(null, arr[i]), i * 200 + 200);
+        }
+      }, 500);
     }
+  }
+  deleteProperies(el: HTMLElement) {
+    el.style.transform = ``
+    el.style.transition = ``;
+    el.style.transitionDelay = ``;
   }
   private isInViewport(): boolean {
     const bounding = this.el.nativeElement.getBoundingClientRect();
@@ -35,8 +41,7 @@ export class SwipeRightDirective {
     var arr = this.el.nativeElement.children;
     for (var i = 0; i < arr.length; i++) {
       arr[i].style.transform = `translateX(100px)`;
-      arr[i].style.transition = `transform 0.4s ease-in-out`;
-      arr[i].style.transitionDelay = `${i * 200}ms`;
+      arr[i].style.transition = `transform 0.2s ease-in-out ${i * 200}ms`;
     }
   }
 }
