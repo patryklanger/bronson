@@ -38,7 +38,6 @@ export class OnePageScrollComponent implements OnInit {
   }
 
   scrollToElementByUrl(url: string) {
-    console.log(url);
     switch (url) {
       case '/main':
         this.mainPageComponent?.nativeElement.scrollIntoView({

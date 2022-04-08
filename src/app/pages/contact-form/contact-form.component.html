@@ -24,7 +24,7 @@
     <div class="divider" appSwipeDown>
       <hr style="margin-bottom: 29px; margin-top: 85px" />
     </div>
-    <form action="" [formGroup]="formGroup">
+    <form id="contactForm" [formGroup]="formGroup" (submit)="formSubmit($event)">
       <div class="form--row">
         <input
           type="text"
@@ -85,7 +85,7 @@
         <p *ngIf="phoneNoNotValid">Wprowadź prawidłowy numer telefonu</p>
         <p *ngIf="messageNotValid">Wiadomość jest za długa</p>
       </div>
-      <button appSwipeDown class="yellow--button" (click)="submitForm()">
+      <button appSwipeDown class="yellow--button" (click)="submitForm($event)">
         Wyślij wiadomość
       </button>
     </form>

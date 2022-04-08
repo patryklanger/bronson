@@ -4,6 +4,7 @@ import { getTestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Message } from '../../model/message';
 import { SendEmailService } from '../../service/send-email.service';
+import { scrollIntoView } from 'seamless-scroll-polyfill';
 
 @Component({
   selector: 'app-contact-form',
@@ -50,7 +51,7 @@ export class ContactFormComponent implements OnInit {
   get message() {
     return this.formGroup.get('message');
   }
-  submitForm() {
+  submitForm(event: Event) {
     if (this.formGroup.valid) {
       this.messageEl.nameNadSurname = this.nameAndSurname?.value;
       this.messageEl.companyName = this.companyName?.value;
@@ -72,8 +73,13 @@ export class ContactFormComponent implements OnInit {
       else this.phoneNoNotValid = false;
       if (!this.message?.valid) this.messageNotValid = true;
       else this.messageNotValid = false;
-      console.log(this.email?.valid);
     }
+  }
+  formSubmit(event: Event) {
+    if (!this.formGroup.valid)
+      document
+        .getElementById('contactForm')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   recountTextareaAmount(event: Event) {
     let elementHeight = this.messageTextarea?.nativeElement.offsetHeight;
