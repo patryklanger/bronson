@@ -45,7 +45,28 @@
   font-size: 25px;
   line-height: 29.9px;
   color: white;
+  overflow-y: hidden;
 }
 .description:first-of-type {
   margin-bottom: 48px;
+}
+@media only screen and (max-width: 680px) {
+  .content {
+    flex-direction: column;
+  }
+  app-scroll-down {
+    display: none;
+  }
+  .two--columns--columns img {
+    width: 100%;
+  }
+  .italic {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .description {
+    font-size: 20px;
+    line-height: 21.6px;
+    margin-bottom: 20px !important;
+  }
 }

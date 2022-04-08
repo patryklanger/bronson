@@ -11,6 +11,7 @@
   scroll-snap-align: start;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .content {
   max-width: 1440px;
@@ -72,4 +73,31 @@ h1 {
 }
 .contact--button:hover {
   transform: translateY(-35%) scale(1.05);
+}
+@media only screen and (max-width: 681px) {
+  h1 {
+    font-size: 50px;
+    line-height: 54px;
+  }
+  .slider {
+    height: 32.4px;
+  }
+  .slider p {
+    font-size: 30px;
+    line-height: 32.4px;
+  }
+  .contact--button {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 18px;
+    transform: translateY(-10%);
+  }
+  .contact--button {
+    transform: translateY(-10%);
+  }
+  .contact--button:hover {
+    transform: translateY(-10%) scale(1.05);
+  }
 }

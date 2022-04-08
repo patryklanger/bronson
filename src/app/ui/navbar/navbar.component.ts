@@ -7,10 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   goToContact() {
     this.router.navigateByUrl('/start-with-us');
   }
   ngOnInit(): void {}
+  redirectTo(uri: string) {
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => this.router.navigate([uri]));
+  }
 }

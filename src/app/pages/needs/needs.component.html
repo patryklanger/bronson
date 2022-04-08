@@ -14,7 +14,7 @@
         <img
           src="/assets/ui/arrow-down.png"
           style="cursor: pointer"
-          class="scroll-down"
+          class="scroll-down desktop-scroll"
           alt=""
           (click)="this.goDownEvent.emit(true)"
         />
@@ -54,7 +54,14 @@
       </div>
     </div>
 
-    <button class="yellow--button">ZBADAJMY POTRZEBY</button>
+    <button class="yellow--button">ZBADAJMY POTRZEBY</button
+    ><img
+      src="/assets/ui/arrow-down.png"
+      style="cursor: pointer"
+      class="mobile-scroll"
+      alt=""
+      (click)="this.goDownEvent.emit(true)"
+    />
   </div>
 
   <app-semi-footer></app-semi-footer>

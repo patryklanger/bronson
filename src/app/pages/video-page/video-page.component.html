@@ -1,7 +1,13 @@
 <div class="container">
   <div class="content">
     <div class="video-player">
-      <video #video src="/assets/IMG_7597.MOV.mp4" autoplay loop></video>
+      <video
+        #video
+        src="/assets/IMG_7597.MOV.mp4"
+        autoplay
+        loop
+        playsinline
+      ></video>
       <div class="controls" [class.active]="playState" (click)="playClicked()">
         <button appButtonAnimation class="play-pasue-button">
           <p>{{ playPauseText }}</p>

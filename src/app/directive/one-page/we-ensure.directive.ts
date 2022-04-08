@@ -12,7 +12,7 @@ export class WeEnsureDirective {
     clearTimeout(this.timeout);
     this.timeout = window.setTimeout(() => {
       this.check();
-    }, 300);
+    }, 400);
   }
   check() {
     if (

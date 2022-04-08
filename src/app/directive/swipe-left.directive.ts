@@ -12,47 +12,6 @@ import {
   selector: '[appSwipeLeft]',
 })
 export class SwipeLeftDirective {
-  //   private defaults: any = {
-  //     offset: 0,
-  //   };
-  //   constructor(private el: ElementRef) {}
-
-  //   @HostListener('window:scroll', ['$event'])
-  //   onScroll() {
-  //     if (this.isInViewport()) {
-  //       setTimeout(() => {
-  //         var arr = this.el.nativeElement.children;
-  //         for (var i = 0; i < arr.length; i++) {
-  //           arr[i].style.transform = `translateX(0)`;
-  //           setTimeout(this.deleteProperies.bind(null, arr[i]), i * 100 + 200);
-  //         }
-  //       }, 500);
-  //     }
-  //   }
-  //   deleteProperies(el: HTMLElement) {
-  //     el.style.transform = ``;
-  //     el.style.transition = ``;
-  //     el.style.transitionDelay = ``;
-  //   }
-  //   private isInViewport(): boolean {
-  //     const bounding = this.el.nativeElement.getBoundingClientRect();
-  //     let top =
-  //       bounding.top -
-  //       (window.innerHeight || document.documentElement.clientHeight) +
-  //       document.documentElement.clientHeight / 3;
-  //     let bottom = bounding.top + bounding.height + this.defaults.offset;
-
-  //     return top < 0 && bottom > 0;
-  //   }
-  //   ngOnInit() {
-  //     var arr = this.el.nativeElement.children;
-
-  //     for (var i = 0; i < arr.length; i++) {
-  //       arr[i].style.transform = `translateX(-100px)`;
-  //       arr[i].style.transition = `transform 0.2s ease-out ${i * 100}ms`;
-  //     }
-  //   }
-  // }
   @Input() animateInAnimation:
     | AnimationMetadata
     | AnimationMetadata[]
@@ -67,7 +26,7 @@ export class SwipeLeftDirective {
   private animating: boolean | undefined;
   private player: AnimationPlayer | undefined;
   private defaults: any = {
-    offset: 0,
+    offset: 100,
   };
 
   constructor(
@@ -80,7 +39,7 @@ export class SwipeLeftDirective {
       this.initialize();
       this.initialized = true;
       this.animate();
-    }, 500);
+    }, 100);
   }
 
   private initialize(): void {
@@ -93,7 +52,7 @@ export class SwipeLeftDirective {
       animation = this.animationBuilder.build(this.animateInAnimation);
     } else {
       animation = this.animationBuilder.build([
-        style({ opacity: 0, transform: 'translateX(-50px)' }),
+        style({ opacity: 0.01, transform: 'translateX(-50px)' }),
         animate(
           '1200ms cubic-bezier(0.35, 0, 0.25, 1)',
           style({ opacity: 1, transform: 'translateX(0)' })

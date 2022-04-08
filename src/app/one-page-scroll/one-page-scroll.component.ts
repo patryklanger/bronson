@@ -6,6 +6,7 @@ import { WeEnsureDirective } from '../directive/one-page/we-ensure.directive';
 import { StartWithUsDirective } from '../directive/one-page/start-with-us.directive';
 import { Router } from '@angular/router';
 import { VideoDirective } from '../directive/one-page/video.directive';
+import { polyfill } from 'seamless-scroll-polyfill';
 
 @Component({
   selector: 'app-one-page-scroll',
@@ -37,38 +38,33 @@ export class OnePageScrollComponent implements OnInit {
   }
 
   scrollToElementByUrl(url: string) {
+    console.log(url);
     switch (url) {
       case '/main':
         this.mainPageComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
+          block: 'start',
         });
         break;
       case '/our-clip':
-        this.videoComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
-        });
+        this.videoComponent?.nativeElement.scrollIntoView({ block: 'start' });
         break;
       case '/feeling':
-        this.feelingComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
-        });
+        this.feelingComponent?.nativeElement.scrollIntoView({ block: 'start' });
         break;
       case '/we-ensure':
         this.weEnsureComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
+          block: 'start',
         });
         break;
       case '/needs':
-        this.needsComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
-        });
+        this.needsComponent?.nativeElement.scrollIntoView({ block: 'start' });
         break;
       case '/start-with-us':
-        this.startWithUs?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        this.startWithUs?.nativeElement.scrollIntoView({ block: 'start' });
         break;
       default:
         this.mainPageComponent?.nativeElement.scrollIntoView({
-          behavior: 'smooth',
+          block: 'start',
         });
         break;
     }
@@ -106,9 +102,7 @@ export class OnePageScrollComponent implements OnInit {
   }
   ngOnInit(): void {}
   ngAfterViewInit() {
-    this.scrollToElementByUrl(this.requestedPath);
-    this.router.events.subscribe(() => {
-      this.scrollToElementByUrl((this.requestedPath = this.router.url));
-    });
+    polyfill();
+    setTimeout(this.scrollToElementByUrl.bind(this, this.requestedPath), 200);
   }
 }

@@ -9,6 +9,7 @@
   padding-top: 84px;
   padding-bottom: 105px;
   scroll-snap-align: start;
+  overflow-y: hidden;
 }
 .content {
   max-width: 1440px;
@@ -75,4 +76,32 @@
 }
 .outline-white-button:hover {
   transform: scale(1.1);
+}
+@media only screen and (max-width: 680px) {
+  .two--columns--columns:last-of-type {
+    display: none;
+  }
+  .list h2 {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+  .list ul {
+    list-style-position: inside;
+    text-indent: -1.8em;
+    padding-left: 1.8em;
+    width: 100%;
+  }
+  .list ul li {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-down {
+    // margin: 0 auto;
+    align-self: center;
+  }
 }

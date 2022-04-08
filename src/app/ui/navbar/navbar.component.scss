@@ -11,6 +11,7 @@ nav div {
   margin: 0 auto;
   height: 80px;
   display: flex;
+  gap: 20px;
   padding: 0 50px;
   align-items: center;
   justify-content: space-between;
@@ -23,6 +24,7 @@ nav a {
   line-height: 16px;
   color: white;
   cursor: pointer;
+  text-align: center;
 }
 .contact--button {
   border: 0;
@@ -32,9 +34,16 @@ nav a {
   padding: 18px 21px;
   border-radius: 20px;
   outline: none;
+  color: black;
   cursor: pointer;
   transition: transfrom 0.4s ease-in-out;
 }
 .contact--button:hover {
   transform: scale(1.05);
+}
+@media only screen and (max-width: 681px) {
+  nav div {
+    padding: 0;
+    justify-content: space-around;
+  }
 }

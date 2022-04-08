@@ -25,7 +25,7 @@ export class SwipeDownDirective {
   private animating: boolean | undefined;
   private player: AnimationPlayer | undefined;
   private defaults: any = {
-    offset: 0,
+    offset: 100,
   };
 
   constructor(
@@ -38,7 +38,7 @@ export class SwipeDownDirective {
       this.initialize();
       this.initialized = true;
       this.animate();
-    }, 500);
+    }, 100);
   }
 
   private initialize(): void {
@@ -51,7 +51,7 @@ export class SwipeDownDirective {
       animation = this.animationBuilder.build(this.animateInAnimation);
     } else {
       animation = this.animationBuilder.build([
-        style({ opacity: 0, transform: 'translateY(30px)' }),
+        style({ opacity: 0.01, transform: 'translateY(30px)' }),
         animate(
           '1200ms cubic-bezier(0.35, 0, 0.25, 1)',
           style({ opacity: 1, transform: 'translateY(0)' })

@@ -7,9 +7,9 @@
   align-items: center;
   position: relative;
   padding-top: 84px;
-  // padding-bottom: 105px;
   scroll-snap-align: start;
   flex-direction: column;
+  overflow-y: hidden;
 }
 .content {
   max-width: 1440px;
@@ -134,7 +134,9 @@ textarea::placeholder {
   cursor: pointer;
   outline: none;
 }
-
+.error-box {
+  margin-bottom: 35px;
+}
 textarea {
   padding-bottom: 0;
   margin-bottom: 35px;
@@ -172,4 +174,35 @@ textarea {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.03em;
+}
+@media only screen and (max-width: 680px) {
+  form {
+    margin-top: 100px;
+  }
+  button {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    font-size: 16px !important;
+  }
+  .info--contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .info--contact--element {
+    text-align: center;
+  }
+  .info--contact--element p:last-of-type {
+    margin-top: 15px;
+  }
+  .form--row {
+    flex-direction: column;
+  }
+  .content .logo {
+    width: 100%;
+  }
+  .descript {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
