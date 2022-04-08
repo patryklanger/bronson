@@ -48,16 +48,19 @@ hr {
   width: 81.73vw;
   gap: 50px;
 }
-.info--contact--element p {
+.info--contact--element p,
+.info--contact--element a {
   text-transform: uppercase;
   font-size: 16px;
   line-height: 18.77px;
   letter-spacing: 0.03em;
   width: unset;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 34px;
 }
-.info--contact--element p:last-of-type {
+.info--contact--element a {
   font-weight: bold;
-  margin-top: 34px;
 }
 form {
   display: flex;
@@ -198,8 +201,8 @@ textarea {
   .info--contact--element {
     text-align: center;
   }
-  .info--contact--element p:last-of-type {
-    margin-top: 15px;
+  .info--contact--element p {
+    margin-bottom: 15px;
   }
   .form--row {
     flex-direction: column;
