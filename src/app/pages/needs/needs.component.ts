@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-needs',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NeedsComponent implements OnInit {
   @Output() goDownEvent = new EventEmitter<boolean>();
-  constructor() {}
+  constructor(public router: Router) {}
 
   ngOnInit(): void {}
 }
