@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { getTestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Message } from '../../model/message';
 import { SendEmailService } from '../../service/send-email.service';
-import { scrollIntoView } from 'seamless-scroll-polyfill';
 
 @Component({
   selector: 'app-contact-form',
