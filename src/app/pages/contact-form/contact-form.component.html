@@ -1,27 +1,27 @@
 <div class="container">
   <div class="content">
-    <img src="/assets/main/logo.png" alt="" class="logo" />
-    <p class="descript">
+    <img src="/assets/main/logo.png" alt="" class="logo" appSwipeDown />
+    <p class="descript" appSwipeDown>
       Połączmy siły i wbij się z nami na zupełnie inny poziom.
     </p>
-    <div class="divider">
+    <div class="divider" appSwipeDown>
       <hr style="margin-bottom: 71px" />
     </div>
     <div class="info--contact">
-      <div class="info--contact--element">
+      <div class="info--contact--element" appSwipeDown>
         <p>email</p>
         <p>hello@bdc.com</p>
       </div>
-      <div class="info--contact--element">
+      <div class="info--contact--element" appSwipeDown>
         <p>whatsapp</p>
         <p>hello@bdc.com</p>
       </div>
-      <div class="info--contact--element">
+      <div class="info--contact--element" appSwipeDown>
         <p>facetime</p>
         <p>hello@bdc.com</p>
       </div>
     </div>
-    <div class="divider">
+    <div class="divider" appSwipeDown>
       <hr style="margin-bottom: 29px; margin-top: 85px" />
     </div>
     <form action="" [formGroup]="formGroup">
@@ -30,6 +30,7 @@
           type="text"
           formControlName="nameAndSurname"
           placeholder="imię i nazwisko"
+          appSwipeDown
           [class.error]="
             nameAndSurname?.invalid &&
             (nameAndSurname?.dirty || nameAndSurname?.touched)
@@ -39,6 +40,7 @@
           type="text"
           placeholder="nazwa firmy"
           formControlName="companyName"
+          appSwipeDown
         />
       </div>
       <div class="form--row">
@@ -46,12 +48,14 @@
           type="text"
           placeholder="email"
           formControlName="email"
+          appSwipeDown
           [class.error]="email?.invalid && (email?.dirty || email?.touched)"
         />
         <input
           type="text"
           placeholder="nr telefonu"
           formControlName="phoneNo"
+          appSwipeDown
           [class.error]="
             phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)
           "
@@ -64,25 +68,33 @@
           id="message"
           placeholder="TREŚĆ"
           formControlName="message"
+          appSwipeDown
           (input)="recountTextareaAmount($event)"
           [class.error]="
             message?.invalid && (message?.dirty || message?.touched)
           "
         ></textarea>
-        <p class="textarea--counter">{{ textareaLength }}/1500</p>
+        <p appSwipeDown class="textarea--counter">{{ textareaLength }}/1500</p>
       </div>
-      <button
-        class="yellow--button"
-        (click)="router.navigateByUrl('/thank-you')"
+      <div
+        class="error-box"
+        style="display: flex; flex-direction: column; gap: 20px"
       >
+        <p *ngIf="nameAndSurnameNotValid">Wprowadź imię i nazwisko</p>
+        <p *ngIf="emailNotValid">Wprowadź prawidłowy adres e-mail</p>
+        <p *ngIf="phoneNoNotValid">Wprowadź prawidłowy numer telefonu</p>
+        <p *ngIf="messageNotValid">Wiadomość jest za długa</p>
+      </div>
+      <button appSwipeDown class="yellow--button" (click)="submitForm()">
         Wyślij wiadomość
       </button>
     </form>
-    <p class="dim"><strong>Dimensione BRONSON</strong></p>
-    <p class="dim">ul. Taka i Taka 00, 00-102 Wrocław</p>
+    <p class="dim" appSwipeDown><strong>Dimensione BRONSON</strong></p>
+    <p class="dim" appSwipeDown>ul. Taka i Taka 00, 00-102 Wrocław</p>
     <img
       src="/assets/form.png"
       alt=""
+      appSwipeDown
       style="
         width: 100vw;
         max-width: 1440px;
@@ -91,7 +103,7 @@
         margin-bottom: 23px;
       "
     />
-    <app-art-menu></app-art-menu>
-    <app-footer></app-footer>
+    <app-art-menu appSwipeDown></app-art-menu>
+    <app-footer appSwipeDown></app-footer>
   </div>
 </div>

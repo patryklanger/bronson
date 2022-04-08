@@ -131,7 +131,10 @@ textarea::placeholder {
   width: fit-content;
   margin: 0 auto;
   background-color: #e0c032;
+  cursor: pointer;
+  outline: none;
 }
+
 textarea {
   padding-bottom: 0;
   margin-bottom: 35px;

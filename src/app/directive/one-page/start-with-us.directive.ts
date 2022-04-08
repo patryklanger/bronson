@@ -17,7 +17,8 @@ export class StartWithUsDirective {
   check() {
     if (
       this.el.nativeElement.getBoundingClientRect().top <= 0 &&
-      this.el.nativeElement.getBoundingClientRect().bottom > 0 && !this.location.isCurrentPathEqualTo('/start-with-us')
+      this.el.nativeElement.getBoundingClientRect().bottom > 0 &&
+      !this.location.isCurrentPathEqualTo('/start-with-us')
     )
       this.location.go('/start-with-us');
   }

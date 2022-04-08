@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { getTestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Message } from '../../model/message';
+import { SendEmailService } from '../../service/send-email.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -21,7 +22,10 @@ export class ContactFormComponent implements OnInit {
   scrollHeight: number | undefined;
   formGroup: FormGroup;
   textareaLength = '0';
-  constructor(public router: Router) {
+  constructor(
+    public router: Router,
+    private sendMessageService: SendEmailService
+  ) {
     window.scroll(0, 0);
     this.formGroup = new FormGroup({
       nameAndSurname: new FormControl('', [Validators.required]),
@@ -53,6 +57,12 @@ export class ContactFormComponent implements OnInit {
       this.messageEl.email = this.email?.value;
       this.messageEl.phoneNo = this.phoneNo?.value;
       this.messageEl.message = this.message?.value;
+      this.sendMessageService.sendMessage(this.messageEl).subscribe({
+        next: () => {
+          this.router.navigateByUrl('/thank-you');
+        },
+        error: (err) => {},
+      });
     } else {
       if (!this.nameAndSurname?.valid) this.nameAndSurnameNotValid = true;
       else this.nameAndSurnameNotValid = false;

@@ -7,11 +7,10 @@ import {
   style,
   animate,
 } from '@angular/animations';
-
 @Directive({
-  selector: '[appSwipeRight]',
+  selector: '[appSwipeDown]',
 })
-export class SwipeRightDirective {
+export class SwipeDownDirective {
   @Input() animateInAnimation:
     | AnimationMetadata
     | AnimationMetadata[]
@@ -52,10 +51,10 @@ export class SwipeRightDirective {
       animation = this.animationBuilder.build(this.animateInAnimation);
     } else {
       animation = this.animationBuilder.build([
-        style({ opacity: 0, transform: 'translateX(50px)' }),
+        style({ opacity: 0, transform: 'translateY(30px)' }),
         animate(
           '1200ms cubic-bezier(0.35, 0, 0.25, 1)',
-          style({ opacity: 1, transform: 'translateX(0)' })
+          style({ opacity: 1, transform: 'translateY(0)' })
         ),
       ]);
     }

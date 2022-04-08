@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
@@ -29,6 +29,8 @@ import { FooterComponent } from './ui/footer/footer.component';
 import { SwipeLeftDirective } from './directive/swipe-left.directive';
 import { SwipeRightDirective } from './directive/swipe-right.directive';
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
+import { SwipeDownDirective } from './directive/swipe-down.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,8 +60,15 @@ import { ThankYouComponent } from './pages/thank-you/thank-you.component';
     SwipeLeftDirective,
     SwipeRightDirective,
     ThankYouComponent,
+    SwipeDownDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

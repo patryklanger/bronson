@@ -107,5 +107,8 @@ export class OnePageScrollComponent implements OnInit {
   ngOnInit(): void {}
   ngAfterViewInit() {
     this.scrollToElementByUrl(this.requestedPath);
+    this.router.events.subscribe(() => {
+      this.scrollToElementByUrl((this.requestedPath = this.router.url));
+    });
   }
 }
