@@ -27,7 +27,12 @@ export class ContactFormComponent implements OnInit {
     this.formGroup = new FormGroup({
       nameAndSurname: new FormControl('', [Validators.required]),
       companyName: new FormControl('', []),
-      email: new FormControl('', [Validators.email, Validators.required]),
+      email: new FormControl('', [
+        Validators.pattern(
+          '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'
+        ),
+        Validators.required,
+      ]),
       phoneNo: new FormControl('', [Validators.pattern('[- +()0-9]+')]),
       message: new FormControl('', [Validators.maxLength(1500)]),
     });
@@ -49,6 +54,7 @@ export class ContactFormComponent implements OnInit {
   }
   submitForm(event: Event) {
     this.formGroup.markAllAsTouched();
+    console.log(this.formGroup.valid);
     if (this.formGroup.valid) {
       this.messageEl.nameNadSurname = this.nameAndSurname?.value;
       this.messageEl.companyName = this.companyName?.value;
@@ -59,18 +65,27 @@ export class ContactFormComponent implements OnInit {
         next: () => {
           this.router.navigateByUrl('/thank-you');
         },
-        error: (err) => {},
+        error: (err) => {
+          console.log(err);
+        },
       });
     }
   }
   formSubmit(event: Event) {
-    if (!this.formGroup.valid)
-      document
-        .getElementById('contactForm')
-        ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (!this.formGroup.valid) {
+      const yOffset = -150;
+      const element = document.getElementById('contactForm');
+      const y =
+        element!.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
   recountTextareaAmount(event: Event) {
     var input: string = this.message?.value;
+    if (input.length > 1500) {
+      input = input.slice(0, 1500);
+      this.message?.setValue(input);
+    }
     this.textareaLength = input.length.toString();
   }
 
