@@ -87,14 +87,12 @@
     margin-bottom: 20px;
   }
   .list ul {
-    list-style-position: inside;
-    text-indent: -1.8em;
-    padding-left: 1.8em;
+    list-style-position: outside;
     width: 100%;
   }
   .list ul li {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 26px;
   }
   .list {
     display: flex;

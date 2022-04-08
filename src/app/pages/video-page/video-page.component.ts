@@ -21,19 +21,8 @@ export class VideoPageComponent implements OnInit {
       : (this.playPauseText = 'play');
     this.video!.nativeElement.muted = !this.playState;
     this.video?.nativeElement.classList.toggle('active');
-    if (this.playState == true) this.video?.nativeElement.play();
   }
-  onVideoStateChange(event: Event) {
-    if (event.type == 'play') {
-      this.playState = true;
-      this.playPauseText = 'pause';
-      this.video?.nativeElement.classList.add('active');
-    } else if (event.type == 'pause') {
-      this.playState = false;
-      this.playPauseText = 'play';
-      this.video?.nativeElement.classList.remove('active');
-    }
-  }
+
   ngOnInit(): void {}
 
   ngAfterViewInit() {
