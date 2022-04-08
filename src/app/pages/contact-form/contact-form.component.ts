@@ -15,10 +15,6 @@ export class ContactFormComponent implements OnInit {
   @ViewChild('messageTextarea') messageTextarea: ElementRef | undefined;
 
   messageEl: Message = new Message();
-  nameAndSurnameNotValid = false;
-  emailNotValid = false;
-  phoneNoNotValid = false;
-  messageNotValid = false;
 
   scrollHeight: number | undefined;
   formGroup: FormGroup;
@@ -52,6 +48,7 @@ export class ContactFormComponent implements OnInit {
     return this.formGroup.get('message');
   }
   submitForm(event: Event) {
+    this.formGroup.markAllAsTouched();
     if (this.formGroup.valid) {
       this.messageEl.nameNadSurname = this.nameAndSurname?.value;
       this.messageEl.companyName = this.companyName?.value;
@@ -64,15 +61,6 @@ export class ContactFormComponent implements OnInit {
         },
         error: (err) => {},
       });
-    } else {
-      if (!this.nameAndSurname?.valid) this.nameAndSurnameNotValid = true;
-      else this.nameAndSurnameNotValid = false;
-      if (!this.email?.valid) this.emailNotValid = true;
-      else this.emailNotValid = false;
-      if (!this.phoneNo?.valid) this.phoneNoNotValid = true;
-      else this.phoneNoNotValid = false;
-      if (!this.message?.valid) this.messageNotValid = true;
-      else this.messageNotValid = false;
     }
   }
   formSubmit(event: Event) {
@@ -82,12 +70,6 @@ export class ContactFormComponent implements OnInit {
         ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   recountTextareaAmount(event: Event) {
-    let elementHeight = this.messageTextarea?.nativeElement.offsetHeight;
-    this.scrollHeight = this.messageTextarea?.nativeElement.scrollHeight;
-    if (elementHeight <= this.scrollHeight!) {
-      elementHeight = this.messageTextarea?.nativeElement.scrollHeight + 18;
-      this.messageTextarea!.nativeElement.style.height = `${elementHeight}px`;
-    }
     var input: string = this.message?.value;
     this.textareaLength = input.length.toString();
   }

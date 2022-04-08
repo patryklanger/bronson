@@ -24,42 +24,78 @@
     <div class="divider" appSwipeDown>
       <hr style="margin-bottom: 29px; margin-top: 85px" />
     </div>
-    <form id="contactForm" [formGroup]="formGroup" (submit)="formSubmit($event)">
+    <form
+      id="contactForm"
+      [formGroup]="formGroup"
+      (submit)="formSubmit($event)"
+    >
       <div class="form--row">
-        <input
-          type="text"
-          formControlName="nameAndSurname"
-          placeholder="imię i nazwisko"
-          appSwipeDown
-          [class.error]="
-            nameAndSurname?.invalid &&
-            (nameAndSurname?.dirty || nameAndSurname?.touched)
-          "
-        />
-        <input
-          type="text"
-          placeholder="nazwa firmy"
-          formControlName="companyName"
-          appSwipeDown
-        />
+        <div class="input--container">
+          <input
+            type="text"
+            formControlName="nameAndSurname"
+            placeholder="imię i nazwisko"
+            appSwipeDown
+            [class.error]="
+              nameAndSurname?.invalid &&
+              (nameAndSurname?.dirty || nameAndSurname?.touched)
+            "
+          />
+          <p
+            class="error--p"
+            [class.active]="
+              nameAndSurname?.invalid &&
+              (nameAndSurname?.dirty || nameAndSurname?.touched)
+            "
+          >
+            Wprowadź imię i nazwisko
+          </p>
+        </div>
+        <div class="input--container">
+          <input
+            type="text"
+            placeholder="nazwa firmy"
+            formControlName="companyName"
+            appSwipeDown
+          />
+        </div>
       </div>
       <div class="form--row">
-        <input
-          type="text"
-          placeholder="email"
-          formControlName="email"
-          appSwipeDown
-          [class.error]="email?.invalid && (email?.dirty || email?.touched)"
-        />
-        <input
-          type="text"
-          placeholder="nr telefonu"
-          formControlName="phoneNo"
-          appSwipeDown
-          [class.error]="
-            phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)
-          "
-        />
+        <div class="input--container">
+          <input
+            type="text"
+            placeholder="email"
+            formControlName="email"
+            appSwipeDown
+            [class.error]="email?.invalid && (email?.dirty || email?.touched)"
+          />
+
+          <p
+            class="error--p"
+            [class.active]="email?.invalid && (email?.dirty || email?.touched)"
+          >
+            Wprowadź prawidłowy adres e-mail
+          </p>
+        </div>
+        <div class="input--container">
+          <input
+            type="text"
+            placeholder="nr telefonu"
+            formControlName="phoneNo"
+            appSwipeDown
+            [class.error]="
+              phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)
+            "
+          />
+          <p
+            class="error--p"
+            [class.active]="
+              phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)
+            "
+          >
+            Wprowadź prawidłowy numer telefonu
+          </p>
+        </div>
       </div>
       <div class="textarea--element">
         <textarea
@@ -75,15 +111,14 @@
           "
         ></textarea>
         <p appSwipeDown class="textarea--counter">{{ textareaLength }}/1500</p>
-      </div>
-      <div
-        class="error-box"
-        style="display: flex; flex-direction: column; gap: 20px"
-      >
-        <p *ngIf="nameAndSurnameNotValid">Wprowadź imię i nazwisko</p>
-        <p *ngIf="emailNotValid">Wprowadź prawidłowy adres e-mail</p>
-        <p *ngIf="phoneNoNotValid">Wprowadź prawidłowy numer telefonu</p>
-        <p *ngIf="messageNotValid">Wiadomość jest za długa</p>
+        <p
+          class="error--p"
+          [class.active]="
+            message?.invalid && (message?.dirty || message?.touched)
+          "
+        >
+          Wiadomość jest za długa
+        </p>
       </div>
       <button appSwipeDown class="yellow--button" (click)="submitForm($event)">
         Wyślij wiadomość

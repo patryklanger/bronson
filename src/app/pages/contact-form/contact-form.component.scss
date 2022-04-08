@@ -73,6 +73,11 @@ form {
   display: flex;
   gap: 28px;
 }
+.input--container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 134px;
+}
 .form--row input,
 textarea {
   font-family: "Helvetica";
@@ -81,7 +86,7 @@ textarea {
   width: 100%;
   background: transparent;
   border: 0;
-  margin-bottom: 134px;
+  margin-bottom: 0px;
   border-bottom: 1px solid #fafafa60;
   padding-bottom: 18px;
   text-transform: uppercase;
@@ -142,9 +147,21 @@ textarea::placeholder {
   cursor: pointer;
   outline: none;
 }
-.error-box {
-  margin-bottom: 35px;
+
+.error--p {
+  height: fit-content;
+  display: block;
+  text-decoration: none;
+  transform: translateY(calc(100% + 10px));
+  bottom: 0;
+  left: 0;
+  position: absolute;
   color: red;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+.active {
+  opacity: 1;
 }
 textarea {
   padding-bottom: 0;
@@ -183,6 +200,13 @@ textarea {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.03em;
+}
+textarea {
+  margin-bottom: 0;
+  height: calc(10 * 1.2em);
+}
+.textarea--element {
+  margin-bottom: 50px;
 }
 @media only screen and (max-width: 680px) {
   form {
